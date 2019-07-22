@@ -105,10 +105,17 @@
 	        <a class="nav-link" href="{{ url_for('products.productShow') }}">Store</a>
 	      </li>
 	    </ul>
-		 <!-- Button to Open the Modal -->
-		 <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#myModalLogin">
-		   		<i class="fas fa-sign-in-alt"></i> Login 
-		 </button>
+	    {% if not current_user.is_authenticated %}
+			 <!-- Button to Open the Modal -->
+			 <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#myModalLogin">
+			   		<i class="fas fa-sign-in-alt"></i> connect 
+			 </button>
+		{% endif %}
+	 	{% if current_user.is_authenticated %}
+			<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#myModalLogout">
+				<i class="fas fa-sign-in-alt"></i> log out 
+			</button>
+		{% endif %}
 	    
 	  </div>
 	</nav><!-- end bootstrap navbar -->
@@ -235,7 +242,7 @@
 				<div class="modal-body">
 				
 					<!-- form setup -->
-					<form action="/login" method="post">
+					<form action="{{url_for('auth.login')}}" method="post">
 						<div class="form-group">
 							<input title="Please, enter your registered e-mail here..." type="text" class="form-control" name="email" placeholder="E-mail address" required="required">		
 						</div>
@@ -256,29 +263,44 @@
 			</div>
 		</div>
 	</div><!-- end login Modal HTML -->
-	
-<!-- 	<div class="alert alert-success" role="alert">
-	
-		  <h4 class="alert-heading">Well done!</h4>
-		  
-		  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-		  
-		  <hr>
-		  
-		  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-	</div> -->
-	
-	<!-- load modal -->
-<!-- 	<script>
-	    $(window).on('load', function(){
-	    	// if (typeof "message" !== "undefined") { 
-	    	    // the variable is defined
-	    		$("#myModal").modal('show');
-	    		//alert("Window Loaded");
-	    		//alert("{{message | safe}}");
-	    	// }
-	    });
-	</script> --><!-- end load modal -->
+	<!-- begin LOGOUT modal HTML -->
+	<div id="myModalLogout" class="modal fade">
+		<div class="modal-dialog modal-login">
+			<div class="modal-content">
+			
+				<div class="modal-header">
+					<div class="avatar">
+						<img src="{{url_for('static',filename='img/avatar.png')}}" alt="Avatar">
+					</div>				
+					<h4 class="modal-title">Confirm Logout?</h4>	
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				
+				<div class="modal-body">
+				
+					<!-- form setup -->
+					<form action="{{url_for('auth.logout')}}" method="post">
+						<div class="form-group">
+							<input title="Please, enter your registered e-mail here..." type="text" class="form-control" name="email" placeholder="E-mail address" required="required">		
+						</div>
+						<div class="form-group">
+							<input title="Please, enter your password here..." type="password" class="form-control" name="password" placeholder="Password" required="required">	
+						</div>   
+  
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Logout</button>
+						</div>
+					</form><!-- end form setup -->
+				</div>
+				
+				<div class="modal-footer">
+					<a href="#">Forgot Password?</a>
+				</div>
+				
+			</div>
+		</div>
+	</div><!-- end login Modal HTML -->	
+
 	  
   </body><!--  end body -->
  
