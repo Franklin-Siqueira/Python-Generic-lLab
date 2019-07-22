@@ -12,7 +12,7 @@ import pandas as pd
 from sqlalchemy.sql import func
 from flask import Blueprint, render_template, request
 # custom
-from app18.stocks import mpltLibPlot, getSP500Stocks, getB3Stocks, getDataB3Stocks, getDataSP500Stocks, condenseData
+from app18.stocks import getSP500Stocks, getB3Stocks, getDataB3Stocks, getDataSP500Stocks, condenseData
 from runtimeUtils import send_email
 from app18.models.models import Data
 
