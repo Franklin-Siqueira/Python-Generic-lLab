@@ -28,7 +28,8 @@ def create_app():
     # Application Configuration
     app.secret_key = os.environ.get("SECRET_KEY") or os.urandom(24)
 #     app.config['SECRET_KEY'] = "Thisissupposedtobesecret!" #.from_object('config.DevelopmentConfig') # was (config.Config')
-    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:245353f10I@localhost/postgres"
+    app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://jovbxjjwysiory:5185debfdb0b3abab22d9ebfa2d555801a6844511e276ec80bd9228c402fbc91@ec2-50-19-222-129.compute-1.amazonaws.com:5432/db26onrhlbj9pt"
+    # Local: "postgresql://postgres:245353f10I@localhost/postgres"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 #     app.config.from_object("config")
 #     app.config.from_pyfile("config.py")
