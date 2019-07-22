@@ -1,0 +1,27 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<!-- load Jumbotron's content -->
+<div class="jumbotron jumbotron-fluid bg-cover-home">
+  <div class="container jumbo-text">
+    <h2 class="display-4">Python And Bootstrap Testing Website</h2>
+    <p class="lead">This is a test website developed in Python and Bootstrap. </p>
+    <hr class="style13">
+    <p>	All the resulting pages are betterments to the material learned on the <br>
+    	Udemy's <a href="https://www.udemy.com/the-python-mega-course/">The Python Mega Course: Build 10 Real World Applications</a>, by Ardit Sulce.<br>
+    	The following packages were used in order to develop and deploy the application to Heroku.
+    </p>
+  </div>
+</div><!-- end load Jumbotron's content -->
+
+<!-- begin load elements in requirements.txt -->
+ <div> 
+    <ul>
+   	{% for n in text %}
+   		<li>{{n}}</li>
+   	{% endfor %}
+   </ul>	  	 
+ </div>
+<!-- end load elements in requirements.txt -->
+
+{%endblock%}

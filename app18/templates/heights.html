@@ -1,0 +1,97 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="jumbotron jumbotron-fluid bg-cover-home">
+  <div class="container jumbo-text">
+	   <h2 class="display-4">Collecting Heights</h2>
+	   <p class="lead">
+		   Is Your Height Above, Below, or on the Average Height of Your Country?
+	   </p>
+	   <hr class="style13">
+	   <p>
+		   After submitting your data, you'll receive an e-mail with your country's average heights from our database.
+	   </p>
+  </div>
+</div><!-- end load Jumbotron's content -->
+
+<div class="container">
+	<h3 class="h3">Simple Page to Get User Data, Insert in a Database, and Send Message </h3>
+	<!-- Begin ROW -->
+	<div class="row">
+		<!-- Columns -->
+		<div class="col-md-3 col-sm-6">
+			<p> 
+				According to the <a href="http://ncdrisc.org/data-downloads-height.html" target="_blank">NCD Risk Factor Collaboration</a>
+				site's data, average heights are increasing across the years. Data available free of cost of heights for the 
+				citizens born between 1896 (really?) and 1996 in all countries.
+			</p>
+		</div>
+		<div class="col-md-3 col-sm-6">
+			<p>
+				According to the <a href="http://ncdrisc.org/data-downloads-height.html" target="_blank">NCD Risk Factor Collaboration</a>
+				site's data, average heights are increasing across the years. Data available free of cost of heights for the 
+				citizens born between 1896 (really?) and 1996 in all countries.
+			</p>
+		</div>
+		<div class="col-md-3 col-sm-6">
+			<p>
+				According to the <a href="http://ncdrisc.org/data-downloads-height.html" target="_blank">NCD Risk Factor Collaboration</a>
+				site's data, average heights are increasing across the years. Data available free of cost of heights for the 
+				citizens born between 1896 (really?) and 1996 in all countries.
+			</p>
+		</div>
+		<div class="col-md-3 col-sm-6">
+			<div class="card">
+				<div class="card-body">
+					<p>
+						If you were born before 1996, you can send your data and get some information regarding
+						your country's data on height, BMI, and more. Just click the following button and fill in
+						the required fields. 						
+					</p>
+
+					<!-- Button to Open the Modal -->
+					<button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#myModalHeight">
+					   	<i class="fas fa-sign-in-alt"></i> my height
+					</button>
+					
+				 </div>
+			</div>
+		</div>
+	</div><!-- End ROW -->
+</div>
+<!-- begin Height modal HTML -->
+<div id="myModalHeight" class="modal fade">
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+		
+			<div class="modal-header">
+				<div class="avatar">
+					<img src="{{url_for('static',filename='img/avatar.png')}}" alt="Avatar">
+				</div>				
+				<h4 class="modal-title">Enter your height</h4>	
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			
+			<div class="modal-body">
+			
+				<!-- form setup -->
+				<form action="{{url_for('main.success')}}" method="post">
+					<div class="form-group">
+						<input title="Please, enter your e-mail here..." type="email" class="form-control" name="email_name" placeholder="E-mail address" required="required">		
+					</div>
+					<div class="form-group">
+						<input title="Please, enter country here..." type="text" class="form-control" name="country_name" placeholder="Country" required="required">	
+					</div>
+					<div class="form-group">
+						<input title="Please, enter height here..." type="text" class="form-control" name="height_name" placeholder="Height (cm)" required="required">	
+					</div>   
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Submit</button>
+					</div>
+				</form><!-- end form setup -->
+			</div>
+		</div>
+	</div>
+</div><!-- end Height Modal HTML -->
+	
+{%endblock%}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+	<!--   title, libraries, and styles -->	
+	<title>
+		Franklin's App
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Custom CSS -->
+ 	<link rel="shortcut icon" href="{{url_for('static',filename='css/favicon.ico')}}">
+ 	<link rel="stylesheet" href="{{url_for('static',filename='css/custom.css')}}">
+ 	<link rel="stylesheet" href="{{url_for('static',filename='css/regularProductGrid.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/datepicker.css')}}">
+	<!-- Public CSS -->
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<!-- Public JS -->
+	<!-- JQuery -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+	<script src="{{url_for('static',filename='scripts/jquery-3.4.1.min.js')}}"></script>
+	<script src="{{url_for('static',filename='scripts/jquery.js')}}"></script>
+	<!-- Bootstrap 4 and Popper -->
+	<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script> -->
+	<script src="{{url_for('static',filename='scripts/bootstrap.js')}}"></script>
+	<script src="{{url_for('static',filename='scripts/bootstrap.min.js')}}"></script>
+	<script src="{{url_for('static',filename='scripts/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{url_for('static',filename='scripts/popper.min.js')}}"></script>
+	<!-- Date Picker and FontAwesome -->
+	<script src="{{url_for('static',filename='scripts/datepicker.js')}}"></script>
+	<script src="https://kit.fontawesome.com/04b89eb396.js"></script>
+	<!-- end title, libraries and styles -->
+	
+	<!-- begin styles for Jumbotron's background image -->
+	<style>
+		.bg-cover-home {
+			opacity: 0.5;
+			background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{url_for('static',filename='img/IMG-20111011-00702.png')}}");
+			background-size: cover;
+		}
+		.bg-cover-About {
+			opacity: 0.5;
+			background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{url_for('static',filename='img/IMG-20111011-00702.png')}}");
+			background-size: cover;
+		}
+		.bg-cover-stocks {
+			opacity: 0.5;
+			background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{url_for('static',filename='img/IMG-20111011-00702.png')}}");
+			background-size: cover;
+		}
+		.bg-cover-heights {
+			opacity: 0.5;
+			background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{url_for('static',filename='img/IMG-20111011-00702.png')}}");
+			background-size: cover;
+		}						
+		.jumbo-text {
+			color: white;
+		}
+		hr {
+		    border: none;
+		    height: 1px;
+		    /* Set the hr color */
+		    color: #333; /* old IE */
+		    background-color: #333; /* Modern Browsers */
+		}
+
+	</style><!-- end style -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#myModal").modal('show');
+		});
+	</script>
+  </head><!-- end head -->
+  <!-- body -->
+  <body>
+   
+    <!-- bootstrap navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark"> <!-- bg-dark"> -->
+       
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  
+	  <a class="navbar-brand" href="{{ url_for('main.home') }}">
+	  	<span class="badge badge-secondary">@it.</span> Franklin
+	  </a>
+	  
+	  <div id="navbarNav" class="navbar-collapse collapse">
+	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	      <li class="nav-item">
+	        <a class="nav-link" href="{{ url_for('main.about') }}">About</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="{{ url_for('analysis.plot') }}">Investments</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="{{ url_for('main.heights') }}">Metrics</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="{{ url_for('products.productShow') }}">Store</a>
+	      </li>
+	    </ul>
+		 <!-- Button to Open the Modal -->
+		 <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#myModalLogin">
+		   		<i class="fas fa-sign-in-alt"></i> Login 
+		 </button>
+	    
+	  </div>
+	</nav><!-- end bootstrap navbar -->
+	
+    <!-- begin main container -->  
+    <div class=".container-fluid ">
+       {%block content%}
+       {%endblock%}
+       <div class="modal fade" id="myModal">
+		   <div class="modal-dialog modal-dialog-centered">
+		     <div class="modal-content">
+		     
+		       <!-- modal Header -->
+		       <div class="modal-header">
+		         <h4 class="modal-title">{{messageHead | safe}}</h4>
+		         <button type="button" class="close" data-dismiss="modal">&times;</button>
+		       </div>
+		       
+		       <!-- modal body -->
+		       <div class="modal-body">
+				{{message | safe}}
+		       </div>
+		       
+		       <!-- modal footer -->
+		       <div class="modal-footer">
+		         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		       </div>
+		       
+		     </div>
+		   </div>
+		</div>
+    </div>
+
+    <!-- begin bootstrap footer -->
+	<footer class="footer">
+		<div class="container bottom_border">
+			<div class="row">
+				<div class=" col-sm-4 col-md col-sm-4  col-12 col">
+				
+					<h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+					<!--headin5_amrc-->
+					<p class="mb10">Dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</p>
+						<p><i class="fa fa-location-arrow"></i> 57037-900, Bl.3/401 </p>
+						<p><i class="fa fa-phone"></i>  +55 82 99915 3002 </p>
+						<p><i class="fa fa fa-envelope"></i> franklin.carrilho@gmail.com</p>
+						<form class="form-inline my-2 my-lg-0" action="http://www.google.com/search?q=" method="get" target="_blank">
+					      <button title="Search..." class="btn btn-outline-secondary btn-sm" value="Google Search" type="submit"><i class="fa fa-search"></i></button>
+					      <input class="form-control form-control-sm" name="q" type="text" placeholder="Google search" aria-label="Search"/>
+					      
+			    		</form>
+				</div>
+		
+				<div class=" col-sm-4 col-md  col-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Online Courses</h5>
+					
+					<!--headin5_amrc-->
+					<ul class="footer_ul_amrc">
+						<li><a href="https://courses.edx.org/dashboard">EDx</a></li>
+			            <li><a href="https://www.udemy.com/">Udemy</a></li>
+			            <li><a href="https://www.coursera.com/">Coursera</a></li>
+					</ul>
+				<!--footer_ul_amrc ends here-->
+				</div>
+		
+				<div class=" col-sm-4 col-md  col-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Tutorials</h5>
+					
+					<!--headin5_amrc-->
+					<ul class="footer_ul_amrc">
+			            <li><a href="https://codepen.io/">Codepen</a></li>
+			            <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
+			            <li><a href="https://www.constantcontact.com/index.jsp">Constant Contact</a></li>
+			            <li><a href="https://tutorialzine.com/">tutorialzine</a></li>
+			            <li><a href="https://www.w3schools.com/">w3schools</a></li>
+					</ul>
+				<!--footer_ul_amrc ends here-->
+				</div>
+		
+				<div class=" col-sm-4 col-md  col-12 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Connect</h5>
+					<!--headin5_amrc ends here-->
+					<ul class="social-network social-circle"> <!-- class="social_footer_ul">  -->
+						<li><a href="https://www.facebook.com/people/Franklin-Carrilho-Siqueira/1026914384"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/franklin-siqueira-a519a131/"><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+
+				<!--footer_ul2_amrc ends here-->
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<ul class="foote_bottom_ul_amrc">
+				<li><a href="{{ url_for('main.home') }}">Home</a></li>
+				<li><a href="{{ url_for('main.about') }}">About</a></li>
+				<li><a href="{{ url_for('analysis.plot') }}">Investments</a></li>
+				<li><a href="{{ url_for('main.heights') }}">heights</a></li>
+			</ul>
+			
+			<!--foote_bottom_ul_amrc ends here-->
+			<p class="text-center">&copy; Copyright 2019 | Designed by <span class="badge badge-secondary">@it.</span>Franklin Siqueira</p>
+			
+		<!--social_footer_ul ends here-->
+		</div>
+
+	</footer><!-- end new footer -->
+
+	<!--  begin modal -->
+	<!--  end modal -->
+
+	<!-- begin LOGIN modal HTML -->
+	<div id="myModalLogin" class="modal fade">
+		<div class="modal-dialog modal-login">
+			<div class="modal-content">
+			
+				<div class="modal-header">
+					<div class="avatar">
+						<img src="{{url_for('static',filename='img/avatar.png')}}" alt="Avatar">
+					</div>				
+					<h4 class="modal-title">Member Login</h4>	
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				
+				<div class="modal-body">
+				
+					<!-- form setup -->
+					<form action="/login" method="post">
+						<div class="form-group">
+							<input title="Please, enter your registered e-mail here..." type="text" class="form-control" name="email" placeholder="E-mail address" required="required">		
+						</div>
+						<div class="form-group">
+							<input title="Please, enter your password here..." type="password" class="form-control" name="password" placeholder="Password" required="required">	
+						</div>   
+  
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+						</div>
+					</form><!-- end form setup -->
+				</div>
+				
+				<div class="modal-footer">
+					<a href="#">Forgot Password?</a>
+				</div>
+				
+			</div>
+		</div>
+	</div><!-- end login Modal HTML -->
+	
+<!-- 	<div class="alert alert-success" role="alert">
+	
+		  <h4 class="alert-heading">Well done!</h4>
+		  
+		  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+		  
+		  <hr>
+		  
+		  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+	</div> -->
+	
+	<!-- load modal -->
+<!-- 	<script>
+	    $(window).on('load', function(){
+	    	// if (typeof "message" !== "undefined") { 
+	    	    // the variable is defined
+	    		$("#myModal").modal('show');
+	    		//alert("Window Loaded");
+	    		//alert("{{message | safe}}");
+	    	// }
+	    });
+	</script> --><!-- end load modal -->
+	  
+  </body><!--  end body -->
+ 
+	
+</html><!-- end  -->

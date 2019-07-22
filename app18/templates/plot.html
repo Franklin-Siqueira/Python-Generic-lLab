@@ -1,0 +1,65 @@
+{%extends "layout.html"%}
+{%block content%}
+<link rel="stylesheet" href={{cdn_css | safe}} type="text/css" />
+<script type="text/javascript" src={{cdn_js | safe}}></script>
+
+<!-- load Jumbotron's content -->
+<div class="jumbotron jumbotron-fluid bg-cover-home">
+  <div class="container jumbo-text">
+    <h2 class="display-4">Python Bokeh Candlestick Graph Demonstration</h2>
+    <p class="lead">Building and testing a candlestick plot with financial data from Yahoo! Finance.</p>
+    <hr class="style13">
+    <p>	You can perform a search for your stocks by filling the form below.</p>
+  </div>
+</div><!-- end load Jumbotron's content -->
+
+<div class="card">
+	<div class="card-body">
+	  <div class="input-group">
+	    <form action="{{url_for('analysis.plot')}}" method="POST">
+	     	<div class="form-row">
+		      <div class="col">
+			      <input title="Please, enter the stock symbol here (e.g., AAPL for Apple Inc.)..." placeholder="Stock symbol" type="text" class="form-control" name="tickerToSearch" required>
+			  </div>
+			  <div class="col">
+			      <input title="Please, enter initial date here..." type="text" placeholder="Start date" aria-label="First name" class="form-control start-date" name="initialDate" required>
+			  </div>
+			  <div class="col">
+			      <input title="Please, enter final date here..." type="text" placeholder="End date" aria-label="Last name" class="form-control end-date" name="finalDate" required>
+			  </div>
+			  <div class="col">  
+			      <button type="submit" class="btn btn-primary"> Submit </button>
+			  </div>
+	 		</div>
+	    </form>
+	  </div>
+		
+	  <div><!-- plot div -->
+	  	{{script1 | safe}}
+	  	<!-- {% for div in div1 %} -->
+    	{{ div | safe }}
+		<!-- {% endfor %} -->
+	  </div><!-- end plot div -->
+ 
+	</div>
+</div>
+
+<script>
+  $(function() {
+    var $startDate = $('.start-date');
+    var $endDate = $('.end-date');
+
+    $startDate.datepicker({
+      autoHide: true,
+    });
+    $endDate.datepicker({
+      autoHide: true,
+      startDate: $startDate.datepicker('getDate'),
+    });
+
+    $startDate.on('change', function () {
+      $endDate.datepicker('setStartDate', $startDate.datepicker('getDate'));
+    });
+  });
+</script>
+{%endblock%}
