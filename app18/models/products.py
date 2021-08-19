@@ -29,15 +29,15 @@ def productShow():
     # product description
     prodDescription = ["Women's Blouse", "Men's T-shirt", "Women's Blouse (2)", "Men's T-shirt (striped)"]
     # product images
-    prodImgPic1 = ["http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg", 
-                        "http://bestjquery.com/tutorial/product-grid/demo9/images/img-3.jpg", 
-                        "http://bestjquery.com/tutorial/product-grid/demo9/images/img-5.jpg", 
-                        "http://bestjquery.com/tutorial/product-grid/demo9/images/img-7.jpg"]
+    prodImgPic1 = ["https://bestjquery.com/tutorial/product-grid/demo183/images/img-1.jpg", 
+                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-2.jpg", 
+                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-3.jpg", 
+                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-4.jpg"]
     
-    prodImgPic2 = ["http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg", 
-                        "http://bestjquery.com/tutorial/product-grid/demo9/images/img-4.jpg", 
-                        "http://bestjquery.com/tutorial/product-grid/demo9/images/img-6.jpg", 
-                        "http://bestjquery.com/tutorial/product-grid/demo9/images/img-8.jpg"]
+    prodImgPic2 = ["https://bestjquery.com/tutorial/product-grid/demo183/images/img-1.jpg", 
+                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-2.jpg", 
+                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-3.jpg", 
+                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-4.jpg"]
     # sale/discount labels
     prodSaleLabel= ["Sale", "Sale", "Super", "Sale"]
     prodDiscLabel= [20, 10, 5, 90]
