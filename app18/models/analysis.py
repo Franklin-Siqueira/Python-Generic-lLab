@@ -112,13 +112,11 @@ def getStockInfo(tickerToSearch):
     
     return tickerJsonData, tickerDetails
 
-###################################################################
+#####################################################################
 #
 #
-#                        Investments Route
-#
-#
-###################################################################   
+#                                                   Investments Route
+#####################################################################   
 @analysisBP.route('/plot/', methods = ["POST", "GET"])
 def plot():
     '''Plot function using bokeh library'''
@@ -146,8 +144,8 @@ def plot():
         messageHead = "Welcome to the Investments Page!"
         messageBody = "I hope you have a good time here. Please, take some time to leave your opinion about the features offered here. I'd really appreciate that!"
         tickerToSearch = "GOOG"
-        startDate = datetime.datetime(2016,1,1)
-        endDate = datetime.datetime(2016,3,10)
+        startDate = datetime.datetime(2020,3,10)
+        endDate = datetime.datetime(2021,3,10)
         print(startDate)
         print(endDate)
     

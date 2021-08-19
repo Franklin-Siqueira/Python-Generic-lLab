@@ -43,4 +43,4 @@ webassets==0.12.1
 Werkzeug==0.15.4
 wrapt==1.11.2
 WTForms==2.2.1
-yfinance==0.1.43
+yfinance==0.1.63

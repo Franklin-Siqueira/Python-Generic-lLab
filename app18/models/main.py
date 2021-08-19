@@ -24,10 +24,7 @@ mainBP = Blueprint("main", __name__,
 #                          routes                                 #
 ###################################################################
 #
-#
-#                        Home Route 
-#
-#
+#                                                        Home Route 
 ###################################################################
 @mainBP.route('/', methods = ["POST", "GET"])
 def home():
@@ -76,13 +73,10 @@ def home():
     
     # return template to render
     return render_template("home.html", text = requirementsText, messageHead = messageHead, message = messageBody)
-###################################################################
+#####################################################################
 #
-#
-#                     About Render Route 
-#
-#
-###################################################################
+#                                                  About Render Route 
+#####################################################################
 @mainBP.route('/about/')
 def about():
     #
@@ -91,13 +85,11 @@ def about():
     return render_template("about.html", messageHead = messageHead, message = messageBody)
 #############           end about route         ###################
 
-###################################################################
+#######################################################################
 #
 #
-#                    Heights Render Page 
-#
-#
-###################################################################
+#                                                   Heights Render Page 
+#######################################################################
 # routes from form to send email with average heights
 @mainBP.route("/heights/")
 def heights():
@@ -119,13 +111,11 @@ def heights():
     print(heightsDF.tail(10))
     return render_template("heights.html", messageHead = messageHead, message = messageBody)
 #############          end heights route        ###################
-###################################################################
+######################3333#############################################
 #
 #
-#                      Success Send Mail 
-#
-#
-###################################################################
+#                                                     Success Send Mail 
+#######################################################################
 @mainBP.route("/success/", methods = ["POST"])
 def success():
     
