@@ -1,7 +1,7 @@
-## Project: Mooc Lab v1.0- A Basic CRUD Exercise
+## Project: Python Flask Lab v1.0 - A Basic Exercise
 
 
-## Python/Django
+## Python/Flask
 ---
 #### **About me**
 
