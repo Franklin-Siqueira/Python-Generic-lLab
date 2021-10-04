@@ -42,7 +42,8 @@ ctx.verify_mode = ssl.CERT_NONE
 def getStockInfo(tickerToSearch):
     '''
     '''
-    urlYahooFinance = "https://in.finance.yahoo.com/quote/" + tickerToSearch + "?ltr=1"
+    # urlYahooFinance = "https://in.finance.yahoo.com/quote/" + tickerToSearch + "?ltr=1"
+    urlYahooFinance = "https://finance.yahoo.com/quote/" + tickerToSearch + "?ltr=1"
     reqYahooFinance = Request(urlYahooFinance, headers = {"User-Agent": "Mozilla/5.0"})
     requestedPageOp =urlopen(reqYahooFinance).read()
     
