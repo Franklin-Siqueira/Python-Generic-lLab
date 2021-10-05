@@ -1,3 +1,6 @@
+# Copyright 2021 Franklin Siqueira.
+# SPDX-License-Identifier: Apache-2.0
+
 # instance/config Application Configuration
     
 SECRET_KEY = "Thisissupposedtobesecret!" #.from_object('config.DevelopmentConfig') # was (config.Config')

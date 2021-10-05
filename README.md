@@ -1,7 +1,7 @@
 ## Project: Python Flask Lab v1.0 - A Basic Exercise
 
 
-## Python/Flask
+## Python, Flask, Bootstrap, Jinja2
 ---
 #### **About me**
 

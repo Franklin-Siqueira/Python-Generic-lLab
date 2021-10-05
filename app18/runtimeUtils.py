@@ -1,7 +1,10 @@
+# Copyright 2021 Franklin Siqueira.
+# SPDX-License-Identifier: Apache-2.0
+
 '''
-File name:
-Author:
-Date:
+File name: runtimeUtils.py
+Author: Franklin Siqueira
+Date: 2019
 
 '''
 #####################################################################
