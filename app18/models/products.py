@@ -30,15 +30,16 @@ def productShow():
     # product description
     prodDescription = ["Women's Blouse", "Men's T-shirt", "Women's Blouse (2)", "Men's T-shirt (striped)"]
     # product images
-    prodImgPic1 = ["https://bestjquery.com/tutorial/product-grid/demo183/images/img-1.jpg", 
-                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-2.jpg", 
-                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-3.jpg", 
-                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-4.jpg"]
+    # from AWS S3 (@me)
+    prodImgPic1 = ["https://fcsaws.s3.sa-east-1.amazonaws.com/fcsstatic/img/fashion/men/burton_oak_full_zip_hoodie_1_367x367_crop_top.png", 
+                        "https://fcsaws.s3.sa-east-1.amazonaws.com/fcsstatic/img/fashion/men/burton_oak_full_zip_hoodie_1_367x367_crop_top.png", 
+                        "https://fcsaws.s3.sa-east-1.amazonaws.com/fcsstatic/img/fashion/men/burton_oak_full_zip_hoodie_1_367x367_crop_top.png", 
+                        "https://fcsaws.s3.sa-east-1.amazonaws.com/fcsstatic/img/fashion/men/burton_oak_full_zip_hoodie_1_367x367_crop_top.png"]
     
-    prodImgPic2 = ["https://bestjquery.com/tutorial/product-grid/demo183/images/img-1.jpg", 
-                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-2.jpg", 
-                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-3.jpg", 
-                        "https://bestjquery.com/tutorial/product-grid/demo183/images/img-4.jpg"]
+    prodImgPic2 = ["https://fcsaws.s3.sa-east-1.amazonaws.com/fcsstatic/img/fashion/men/adidas_blackbird_packable_wind_jacket_1_367x367_crop_top.png", 
+                        "https://fcsaws.s3.sa-east-1.amazonaws.com/fcsstatic/img/fashion/men/adidas_blackbird_packable_wind_jacket_1_367x367_crop_top.png", 
+                        "https://fcsaws.s3.sa-east-1.amazonaws.com/fcsstatic/img/fashion/men/adidas_blackbird_packable_wind_jacket_1_367x367_crop_top.png", 
+                        "https://fcsaws.s3.sa-east-1.amazonaws.com/fcsstatic/img/fashion/men/adidas_blackbird_packable_wind_jacket_1_367x367_crop_top.png"]
     # sale/discount labels
     prodSaleLabel= ["Sale", "Sale", "Super", "Sale"]
     prodDiscLabel= [20, 10, 5, 90]
